@@ -8,14 +8,14 @@
 //Con este enum se sabe a que sistema debe dirigirse el mensaje
 enum MessageSubsys {GameLoop, Console};
 
-class Message{
-private:
-    MessageSubsys msgClass;
+struct Message {
+    MessageSubsys type;
     std::string message;
 
-public :
-    Message(MessageSubsys type, std::string message);
-    ~Message();
+    Message( MessageSubsys type, std::string message) {
+        this->type = type;
+        this-> message = message;
+    }
 };
 
 #endif
